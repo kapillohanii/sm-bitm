@@ -3,7 +3,7 @@
 export default function Page() {
     return (
         <div className="flex flex-row h-full w-full border border-yellow-400 justify-center mr-10 p-10 mt-5 bg-gray-50 rounded-xl">
-            <div className="h-full w-150 flex flex-row border border-yellow-400 rounded-lg"><img className="border border-red-600 rounded-lg h-120 w-80" src="https://pbs.twimg.com/profile_images/1588857535842639873/VwzhRVuZ_400x400.jpg" alt="spicmacay" /></div>
+            <div className="overflow-hidden h-min w-150 flex flex-row border border-yellow-400 rounded-lg"><img className="border border-red-600 rounded-lg h-120 w-80 hover:scale-105 transition-all duration-300 overflow-hidden" src="https://pbs.twimg.com/profile_images/1588857535842639873/VwzhRVuZ_400x400.jpg" alt="spicmacay" /></div>
             <div className="border border-yellow-400 flex flex-col p-4 leading-normal h-full w-full m-5 rounded-lg">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">About SPIC MACAY</h5>
                 <div className="mb-3 font-normal text-gray-700 dark:text-gray-400">

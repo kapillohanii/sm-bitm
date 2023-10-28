@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    @apply h-screen grid place-items-center overflow-hidden m-0;
+    background: black;
+    color: white;
+  }
+  .cards {
+    @apply flex;
+  }
+  .card {
+    @apply shadow-[3px_3px_12px_2px_rgba(black,0.6)] transition-[0.2s] p-6 rounded-2xl bg-gradient-to-r to-amber-900 from-yellow-700 drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.3)];
+    border: solid gray 1px;
+    color: black;
+  }
+  .card:not(:first-child) {
+    @apply ml-[-4rem];
+  }
+  .card:hover,
+  .card:focus-within {
+    @apply translate-y-[-3rem] translate-x-[-2rem] scale-125 opacity-80 transition-all duration-500 cursor-pointer;
+  }
+  .card:hover ~ .card,
+  .card:focus-within ~ .card {
+    @apply translate-x-8;
+  }
+  .container {
+    @apply relative w-80 h-40;
+  }
+  .image {
+    @apply block w-full h-auto;
+  }
+  .overlay {
+    @apply absolute bg-[#008CBA] overflow-hidden w-full h-0 transition-[0.5s] duration-[ease] bottom-0 inset-x-0 rounded-lg;
+  }
+  .container:hover .overlay {
+    @apply h-full;
+  }
+  .text {
+    @apply text-[white] text-xl absolute -translate-x-2/4 -translate-y-2/4 text-center left-2/4 top-2/4;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
