@@ -2,7 +2,7 @@
 export default function Wiki(){
     return (
 
-        <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden  hover:scale-90 transition-all duration-700">
           <div className="relative">
             <img src="https://pbs.twimg.com/profile_images/1588857535842639873/VwzhRVuZ_400x400.jpg" alt="Wikipedia Logo" className="w-full h-48 object-cover opacity-60 blur-1" />
             <div className="absolute bottom-0 left-0 bg-black text-white p-2 text-sm">

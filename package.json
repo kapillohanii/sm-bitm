@@ -14,7 +14,8 @@
     "react": "^18",
     "react-calendar": "^4.6.1",
     "react-dom": "^18",
-    "react-scroll-parallax": "^3.4.2"
+    "react-scroll-parallax": "^3.4.2",
+    "three": "^0.158.0"
   },
   "devDependencies": {
     "@types/node": "^20",

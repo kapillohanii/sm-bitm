@@ -3,8 +3,6 @@
 @tailwind utilities;
 body {
     @apply h-screen grid place-items-center overflow-hidden m-0;
-    background: black;
-    color: white;
   }
   .cards {
     @apply flex;

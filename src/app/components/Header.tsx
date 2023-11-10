@@ -9,10 +9,10 @@ export default function Header() {
     };
 
     return (
-        <header className='flex flex-row justify-center bottom-1 border border-gray-700 rounded-b-lg bg-slate-400'>
+        <header className='flex flex-row justify-center bottom-1 border border-gray-700 rounded-b-lg bg-slate-400 sticky top-0 relative z-30'>
             <a href="/" className="flex items-center">
                 <img src="https://pbs.twimg.com/profile_images/1588857535842639873/VwzhRVuZ_400x400.jpg" className="mr-3 h-6 sm:h-9 rounded-3xl" alt="Logo" />
-                <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Spic-Macay BIT Mesra Chapter</span>
+                <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Spic-Macay BIT Mesra Chapter</span>
             </a>
             <nav className="bg-slate-400 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
                 <div className="flex flex-wrap justify between items-center mx-auto max-w-screen-xl">

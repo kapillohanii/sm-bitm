@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.ThreeScene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  /* Behind other content */
+  opacity: 1;
+  /* Adjust opacity as needed */
+  transition: opacity 1.5s ease-out;
+  /* Add transitions or animations if desired */
+}
