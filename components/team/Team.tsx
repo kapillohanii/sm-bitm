@@ -1,8 +1,9 @@
 'use client'
 
-import { Card, Image, Text, Group, SimpleGrid } from "@mantine/core";
+import { Card, Image, Text, Group, SimpleGrid, rem } from "@mantine/core";
 import { useHover } from "@mantine/hooks";
 import { ArrowRightCircle } from "lucide-react";
+import { IconBrandLinkedin } from '@tabler/icons-react';
 
 const teamMembers = [
   {
@@ -68,7 +69,7 @@ const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
           cursor: "pointer",
         }}
       >
-        <Image src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9FMCHrgp5aRdsZje0SaqLh3A_3o1g7zjUye9WNw_RJQ&s"} height={160} alt="Team member" />
+        <Image src={image} height={160} alt="Team member" />
       </Card.Section>
       <Group
         style={{
@@ -77,7 +78,7 @@ const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
         }}
       >
         <Text >{name}</Text>
-        <ArrowRightCircle size={18} />
+        <IconBrandLinkedin style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
       </Group>
       <Text
         size="sm"

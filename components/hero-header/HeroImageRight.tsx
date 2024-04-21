@@ -1,5 +1,6 @@
 import { Container, Title, Text, Button } from '@mantine/core';
 import classes from './HeroImageRight.module.css';
+import Typewriter from '../typewriter/Typewriter';
 
 export function HeroImageRight() {
   return (
@@ -8,14 +9,10 @@ export function HeroImageRight() {
         <div className={classes.inner}>
           <div className={classes.content}>
             <Title className={classes.title}>
-              <Text
-                component="span"
-                inherit
-                variant="gradient"
-                gradient={{ from: 'pink', to: 'yellow' }}
-              >
-                SPIC MACAY BIT Mesra Chapter
-              </Text>{' '}
+                <Typewriter text="  SPIC MACAY" />
+                <br /> 
+                <Typewriter text="  BIT Mesra Chapter." />
+
             </Title>
 
             <Text className={classes.description} mt={30}>
