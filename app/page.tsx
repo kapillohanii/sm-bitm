@@ -1,13 +1,20 @@
-import Image from "next/image";
 import { HeaderMenu } from "@/components/header/HeaderMenu";
+import { FooterSocial } from "@/components/footer/FooterSocial";
+import { HeroImageRight } from "@/components/hero-header/HeroImageRight";
+import { EventSection } from "@/sections/EventSection";
+import { GallerySection } from "@/sections/GallerySection";
+import { TeamSection } from "@/sections/TeamSection";
 
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-          <HeaderMenu />
-      </div>
-    </main>
+    <>
+      <HeaderMenu />
+      <HeroImageRight />
+      <EventSection title="Events" />
+      <GallerySection title="Gallery" />
+      <TeamSection title="Meet Our Team"/>
+      <FooterSocial />
+    </>
   );
 }
