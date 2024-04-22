@@ -1,4 +1,5 @@
 import Logo from './SpicMacayLogo.png'
+import { Image } from '@mantine/core';
 
 interface LogoProps {
   size: number;
@@ -6,11 +7,15 @@ interface LogoProps {
 
 const SpicMacayLogo: React.FC<LogoProps> = ({ size }) => {
   return (
-    <img
-      src={Logo.src}
-      alt="spic-macay-logo"
-      style={{ width: size, height: 'auto' }}
-    />
+    <div>
+      <Image
+        src={Logo.src}
+        alt="spic-macay-logo"
+        style={{ width: size, height: 'auto',paddingLeft: 14 }}
+      />
+
+    </div>
+
   );
 };
 
