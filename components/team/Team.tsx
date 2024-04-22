@@ -1,7 +1,7 @@
 'use client'
 
-import { Card, Image, Text, Group, SimpleGrid, rem } from "@mantine/core";
-import { useHover } from "@mantine/hooks";
+import { Card, Image, Text, Group, SimpleGrid, rem, useMantineTheme } from "@mantine/core";
+import { useHover, useMediaQuery, UseMediaQueryOptions } from "@mantine/hooks";
 import { ArrowRightCircle } from "lucide-react";
 import { IconBrandLinkedin } from '@tabler/icons-react';
 
@@ -45,7 +45,7 @@ interface TeamCardProps {
     image: string;
     position: string;
     about: string;
-  }
+}
 
 const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
   const { hovered, ref } = useHover();
@@ -105,11 +105,21 @@ const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
 
 
 export function Team() {
+  const options: UseMediaQueryOptions = {
+    getInitialValueInEffect: false,
+  };
+  const theme = useMantineTheme();
+  
+  const md = useMediaQuery('(max-width: 50em)', true, options);
+  const mobile = useMediaQuery('(max-width: 26em)', true, options);
+
+  const columns = mobile ? 1 : md ? 2 : 3;
+
   return (
-      <SimpleGrid cols={3} spacing="lg">
-        {teamMembers.map((member) => (
-          <TeamCard key={member.id} {...member} />
-        ))}
-      </SimpleGrid>
+    <SimpleGrid cols={columns} spacing="lg">
+      {teamMembers.map((member) => (
+        <TeamCard key={member.id} {...member} />
+      ))}
+    </SimpleGrid>
   );
 }
