@@ -106,7 +106,7 @@ const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
 
 export function Team() {
   const options: UseMediaQueryOptions = {
-    getInitialValueInEffect: false,
+    getInitialValueInEffect: true,
   };
   const theme = useMantineTheme();
   
