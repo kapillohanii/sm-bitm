@@ -1,6 +1,6 @@
 'use client'
 
-import { Menu, Group, Center, Burger, Container } from '@mantine/core';
+import { Menu, Group, Center, Burger, Container, rem } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import SpicMacayLogo  from '../logo/SpicMacayLogo';
@@ -71,6 +71,11 @@ export function HeaderMenu() {
             {items}
           </Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
+          {opened && 
+            <Group gap={5} bg="var(--mantine-color-body)" style={{display:'flex',flexDirection:'column',position:'absolute',top:rem(55),right:rem(0),color:"light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0))"}}>
+              {items}
+            </Group>
+          }
         </div>
       </Container>
     </header>
