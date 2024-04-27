@@ -2,7 +2,6 @@
 
 import { Card, Image, Text, Group, SimpleGrid, rem, useMantineTheme } from "@mantine/core";
 import { useHover, useMediaQuery, UseMediaQueryOptions } from "@mantine/hooks";
-import { ArrowRightCircle } from "lucide-react";
 import { IconBrandLinkedin } from '@tabler/icons-react';
 import classes from './Team.module.css';
 
@@ -114,6 +113,7 @@ const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
           style={{
             color: "#4a5568",
             lineHeight: 1.5,
+            fontFamily: "Greycliff CF, var(--mantine-font-family)"
           }}
         >
           {position}
@@ -125,6 +125,7 @@ const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
               color: "#718096",
               marginTop: 10,
               lineHeight: 1.5,
+              fontFamily: "Greycliff CF, var(--mantine-font-family)"
             }}
           >
             {about}

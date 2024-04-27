@@ -54,6 +54,9 @@
   color: var(--mantine-color-white);
   opacity: 0.75;
   max-width: rem(500px);
+  font-family:
+  Greycliff CF,
+  var(--mantine-font-family);
 
   @media (max-width: $mantine-breakpoint-md) {
     max-width: 100%;

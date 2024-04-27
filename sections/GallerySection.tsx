@@ -12,11 +12,11 @@ export function GallerySection({ title }: GallerySectionProps) {
       <Container
         size="lg"
         style={{
-          marginTop: 30,
+          marginTop: "80px",
         }}
       >
         <Text
-          size="xl"
+          size="120px"
           style={{
             marginBottom: 20,
             fontWeight: 700,
