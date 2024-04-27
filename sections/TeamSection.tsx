@@ -8,7 +8,7 @@ interface TeamSectionProps {
 
 export function TeamSection({ title }: TeamSectionProps) {
   return (
-    <section id="gallery">
+    <section id="team">
       <Container
         size="lg"
         style={{
