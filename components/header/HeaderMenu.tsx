@@ -82,7 +82,7 @@ export function HeaderMenu() {
           </Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
           {opened &&
-            <Group gap={5} bg="var(--mantine-color-body)" style={{ display: 'flex', flexDirection: 'column', position: 'absolute', top: rem(55), right: rem(0), color: "light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0))" }}>
+            <Group gap={5} bg="var(--mantine-color-body)" style={{ display: 'flex', flexDirection: 'column', position: 'absolute', top: rem(55), right: rem(0), color: "light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0))", borderRadius:"0 0 0px 8px", border:"1px solid gray", borderTop:"None" }}>
               {items}
             </Group>
           }
