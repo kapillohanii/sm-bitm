@@ -4,6 +4,7 @@ import { Card, Image, Text, Group, SimpleGrid, rem, useMantineTheme } from "@man
 import { useHover, useMediaQuery, UseMediaQueryOptions } from "@mantine/hooks";
 import { ArrowRightCircle } from "lucide-react";
 import { IconBrandLinkedin } from '@tabler/icons-react';
+import classes from './Team.module.css';
 
 const teamMembers = [
   {
@@ -41,67 +42,99 @@ const teamMembers = [
 ];
 
 interface TeamCardProps {
-    name: string;
-    image: string;
-    position: string;
-    about: string;
+  name: string;
+  image: string;
+  position: string;
+  about: string;
 }
 
 const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
   const { hovered, ref } = useHover();
   return (
-    <Card
-      ref={ref}
-      shadow="sm"
-      p="lg"
-      radius="md"
-      withBorder
-      style={{
-        transform: hovered ? "scale(1.05)" : "scale(1)",
-        borderColor: hovered ? "#ffa500" : "#cbd5e0",
-        transition: "transform 150ms ease, borderColor 150ms ease",
-      }}
-    >
-      <Card.Section
-        component="a"
-        href="#"
+    <div style={{
+      padding: "3px",
+      position: 'relative',
+      overflow: 'hidden',
+
+    }}>
+      {hovered && (<>
+        <div className={classes.glowbox} />
+        <div className={classes.borderbox} />
+      </>)}
+
+
+
+      <Card
+        ref={ref}
+        shadow="sm"
+        p="lg"
+        radius="lg"
+        withBorder
         style={{
-          cursor: "pointer",
+          position: 'relative',
+          overflow: 'hidden',
+          margin: "1px"
         }}
       >
-        <Image src={image} height={160} alt="Team member" />
-      </Card.Section>
-      <Group
-        style={{
-          marginBottom: 5,
-          marginTop: 5,
-        }}
-      >
-        <Text >{name}</Text>
-        <IconBrandLinkedin style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
-      </Group>
-      <Text
-        size="sm"
-        style={{
-          color: "#4a5568",
-          lineHeight: 1.5,
-        }}
-      >
-        {position}
-      </Text>
-      <Text
-        size="sm"
-        style={{
-          color: "#718096",
-          marginTop: 10,
-          lineHeight: 1.5,
-        }}
-      >
-        {about}
-      </Text>
-    </Card>
+
+        <Card.Section
+          component="a"
+          href="#"
+          style={{
+            cursor: "pointer",
+            display: 'block',
+            position: 'relative',
+            overflow: 'hidden',
+            zIndex: 1,
+          }}
+        >
+          <Image
+            src={image}
+            height={hovered ? 320 : 260}
+            alt="Team member"
+            style={{
+              transition: 'height 0.3s ease',
+              width: '100%',
+              objectFit: 'cover',
+            }}
+          />
+
+        </Card.Section>
+        <Group
+          style={{
+            marginBottom: 5,
+            marginTop: 5,
+          }}
+        >
+          <Text>{name}</Text>
+          <IconBrandLinkedin style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+        </Group>
+        <Text
+          size="sm"
+          style={{
+            color: "#4a5568",
+            lineHeight: 1.5,
+          }}
+        >
+          {position}
+        </Text>
+        {!hovered && (
+          <Text
+            size="sm"
+            style={{
+              color: "#718096",
+              marginTop: 10,
+              lineHeight: 1.5,
+            }}
+          >
+            {about}
+          </Text>
+        )}
+      </Card>
+    </div>
   );
 };
+
 
 
 export function Team() {
@@ -109,7 +142,7 @@ export function Team() {
     getInitialValueInEffect: true,
   };
   const theme = useMantineTheme();
-  
+
   const md = useMediaQuery('(max-width: 50em)', true, options);
   const mobile = useMediaQuery('(max-width: 26em)', true, options);
 
