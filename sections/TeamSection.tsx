@@ -16,7 +16,7 @@ export function TeamSection({ title }: TeamSectionProps) {
         }}
       >
         <Text
-          size="120px"
+          size="100px"
           style={{
             marginBottom: 20,
             fontWeight: 700,
