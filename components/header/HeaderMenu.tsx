@@ -3,14 +3,14 @@
 import { Menu, Group, Center, Burger, Container, rem } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
-import SpicMacayLogo  from '../logo/SpicMacayLogo';
+import SpicMacayLogo from '../logo/SpicMacayLogo';
 import classes from './HeaderMenu.module.css';
 
 const links = [
   { link: '/about', label: 'About us' },
-  { link: '/events', label: 'Events' },
-  { link: '/gallery', label: 'Gallery'},
-  { link: '/team', label: 'Team'},
+  { link: '#events', label: 'Events' },
+  { link: '#gallery', label: 'Gallery' },
+  { link: '#team', label: 'Team' },
   {
     link: '#2',
     label: 'Support',
@@ -24,6 +24,13 @@ const links = [
 
 export function HeaderMenu() {
   const [opened, { toggle }] = useDisclosure(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  };
 
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
@@ -55,7 +62,10 @@ export function HeaderMenu() {
         key={link.label}
         href={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
+        onClick={(event) => {
+          event.preventDefault()
+          scrollToSection(link.link.substring(1))
+        }}
       >
         {link.label}
       </a>
@@ -71,8 +81,8 @@ export function HeaderMenu() {
             {items}
           </Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-          {opened && 
-            <Group gap={5} bg="var(--mantine-color-body)" style={{display:'flex',flexDirection:'column',position:'absolute',top:rem(55),right:rem(0),color:"light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0))"}}>
+          {opened &&
+            <Group gap={5} bg="var(--mantine-color-body)" style={{ display: 'flex', flexDirection: 'column', position: 'absolute', top: rem(55), right: rem(0), color: "light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0))" }}>
               {items}
             </Group>
           }

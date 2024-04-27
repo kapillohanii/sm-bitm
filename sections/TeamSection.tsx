@@ -1,13 +1,14 @@
 import { Text, Container } from "@mantine/core";
 import { Team } from "@/components/team/Team";
 
-interface TeamSectionProps{
-    title: string;
+interface TeamSectionProps {
+  title: string;
 }
 
 
-export function TeamSection({title}:TeamSectionProps) {
-    return (
+export function TeamSection({ title }: TeamSectionProps) {
+  return (
+    <section id="gallery">
       <Container
         size="lg"
         style={{
@@ -25,5 +26,6 @@ export function TeamSection({title}:TeamSectionProps) {
         </Text>
         <Team />
       </Container>
-    );
-  }
+    </section>
+  );
+}

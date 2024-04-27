@@ -1,13 +1,14 @@
 import { Text, Container } from "@mantine/core";
 import { Subgrid } from "@/components/subgrid/Subgrid";
 
-interface GallerySectionProps{
-    title: string;
+interface GallerySectionProps {
+  title: string;
 }
 
 
-export function GallerySection({title}:GallerySectionProps) {
-    return (
+export function GallerySection({ title }: GallerySectionProps) {
+  return (
+    <section id="gallery">
       <Container
         size="lg"
         style={{
@@ -25,5 +26,6 @@ export function GallerySection({title}:GallerySectionProps) {
         </Text>
         <Subgrid />
       </Container>
-    );
-  }
+    </section>
+  );
+}

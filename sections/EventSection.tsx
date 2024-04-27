@@ -1,13 +1,14 @@
 import { Text, Container } from "@mantine/core";
 import { CardsCarousel } from "@/components/carousel/CardsCarousel";
 
-interface EventSectionProps{
-    title: string;
+interface EventSectionProps {
+  title: string;
 }
 
 
-export function EventSection({title}: EventSectionProps) {
-    return (
+export function EventSection({ title }: EventSectionProps) {
+  return (
+    <section id="events">
       <Container
         size="lg"
         style={{
@@ -25,5 +26,6 @@ export function EventSection({title}: EventSectionProps) {
         </Text>
         <CardsCarousel />
       </Container>
-    );
-  }
+    </section>
+  );
+}
