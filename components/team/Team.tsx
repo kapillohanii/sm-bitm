@@ -56,13 +56,10 @@ const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
       overflow: 'hidden',
 
     }}>
-      {hovered && (<>
+      <>
         <div className={classes.glowbox} />
         <div className={classes.borderbox} />
-      </>)}
-
-
-
+      </>
       <Card
         ref={ref}
         shadow="sm"
@@ -89,7 +86,7 @@ const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
         >
           <Image
             src={image}
-            height={hovered ? 320 : 260}
+            height={260}
             alt="Team member"
             style={{
               transition: 'height 0.3s ease',
@@ -118,19 +115,6 @@ const TeamCard = ({ name, image, position, about }: TeamCardProps) => {
         >
           {position}
         </Text>
-        {!hovered && (
-          <Text
-            size="sm"
-            style={{
-              color: "#718096",
-              marginTop: 10,
-              lineHeight: 1.5,
-              fontFamily: "Greycliff CF, var(--mantine-font-family)"
-            }}
-          >
-            {about}
-          </Text>
-        )}
       </Card>
     </div>
   );
